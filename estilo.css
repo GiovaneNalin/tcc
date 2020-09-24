@@ -1,0 +1,70 @@
+.container-index{
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr;
+	grid-template-rows:15vh 70vh;
+	grid-template-areas:
+						"container-head container-head container-head"
+						"container-body container-body container-body"						
+	;
+}
+
+.container-head{
+	grid-area:container-head;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size: 18px;
+	background-color:white;
+}
+
+.titulo{
+	background-color:#87CEFA;
+	width:90%;
+	display:flex;
+	justify-content:start;
+	align-items:center;
+}
+
+.center{
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.container-body{
+	grid-area:container-body;
+	background-color:#ADD8E6;
+	justify-content:center;
+	align-items:center;
+}
+
+.logo1{
+	width:15vh;
+}
+
+.logo_administrador{
+	background-color:#1C1C1C;
+	color:white;
+}
+
+.logo_agente{
+	background-color:#FFD700;
+	color:white;
+}
+	
+.body_administrador{
+	background-color:#D3D3D3;
+}
+
+.body_agente{
+	background-color:#F0E68C;
+}
+
+thead{
+	background-color:#2F4F4F;
+	color:white;
+}
+table{
+	background-color:#40E0D0;
+}
