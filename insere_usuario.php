@@ -36,10 +36,11 @@
 								'$senha',
 								'$telefone'					
 								)";
-						
+				
 	mysqli_error($conexao);
 	mysqli_query($conexao, $insercao)
 		or die("0");
+
 		
 	echo "<script language=javascript>alert( 'Cadastro realizado com sucesso!' );</script>";
 	header("location: index.php");

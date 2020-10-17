@@ -32,7 +32,7 @@
 							<label align='left'>Senha
 								<input class='form-control' maxlength='6' type="password" name="senha" placeholder="Senha">
 							</label >
-								<input type="hidden" name="pagina" value="paciente"/>
+								<input type="hidden" name="pagina" value="paciente"/>								
 							<div>
 								<button id='btn' class='btn btn-info'>LOGIN</button><br/>
 							</div>
