@@ -1,45 +1,8 @@
 <?php session_start();
-	include("conexao.php");
 	include ("menu.php");
 	include("verificacao_paciente.php");	
 	if(isset($_SESSION["autorizado"]) and $_SESSION["pagina"] == "paciente"){
 
-	$cpf = $_SESSION["autorizado"];
-	$consulta = "SELECT d.lote, 
-						d.data_tomada, 
-						d.data_agendada, 
-						d.local, 
-						d.aplicador,
-						d.confirmacao, 
-						l.tipo_vacina 
-				FROM dose d
-				INNER JOIN lote l
-				ON d.lote = l.id
-				INNER JOIN vacina v
-				ON l.tipo_vacina = v.tipo
-				WHERE cpf_paciente = '$cpf'";
-	$con = mysqli_query($conexao, $consulta) or die ($mysqli->error);
-	
-	$consulta_dependente = "SELECT
-								d.lote,
-								d.data_tomada,
-								d.data_agendada,
-								d.local,
-								d.aplicador,
-								d.confirmacao,
-								l.tipo_vacina,
-								p.nome,
-								p.cpf
-							FROM paciente p
-							INNER JOIN dose d ON
-							p.cpf = d.cpf_paciente
-							INNER JOIN lote l ON
-								d.lote = l.id
-							INNER JOIN vacina v ON
-								l.tipo_vacina = v.tipo
-							WHERE
-								p.cpf_responsavel = '$cpf'";
-	$con_dependente = mysqli_query($conexao, $consulta_dependente) or die ($mysqli->error);
 ?>
 	</head>
 	<body class='bg-info'>
@@ -53,7 +16,7 @@
 					<button class ='btn btn-info'> Filtrar </button><br />
 					<button class ='btn btn-warning'> Próximas vacinas </button><br />
 					
-						<table class='table table-hover'>
+						<table id = "carteirinha" class='table table-hover'>
 							<thead>
 								<tr> 
 									<th><b>Dose</b></th> 
@@ -65,16 +28,9 @@
 								</tr>
 							</thead>
 							<tbody>
-							<?php while($row_carteirinha = mysqli_fetch_assoc($con)){ ?>
-								<tr class='table-success'>  
-									<td><?php echo $row_carteirinha["tipo_vacina"] ?></td> 
-									<td><?php echo $row_carteirinha["lote"] ?></td> 
-									<td><?php echo $row_carteirinha["data_tomada"] ?></td> 
-									<td><?php echo $row_carteirinha["data_agendada"] ?></td> 
-									<td><?php echo $row_carteirinha["local"] ?></td> 
-									<td><?php echo $row_carteirinha["aplicador"] ?></td> 
+								<tr id = "carteirinha">
+
 								</tr>
-							<?php }?>
 							</tbody>
 						</table>
 					</div>
@@ -89,7 +45,7 @@
 						<button class ='btn btn-info'> Filtrar </button><br />
 						<button class ='btn btn-warning'> Próximas vacinas </button><br />
 						
-						<?php while($row_carteirinha = mysqli_fetch_assoc($con_dependente)){?>
+						<div id = "container-dependentes">
 							<table class='table table-hover'>
 								<thead>
 									<tr> 
@@ -102,18 +58,12 @@
 									</tr>
 								</thead>
 								<tbody>
-								
-									<tr class='table-success'>  
-										<td><?php echo $row_carteirinha["tipo_vacina"] ?></td> 
-										<td><?php echo $row_carteirinha["lote"] ?></td> 
-										<td><?php echo $row_carteirinha["data_tomada"] ?></td> 
-										<td><?php echo $row_carteirinha["data_agendada"] ?></td> 
-										<td><?php echo $row_carteirinha["local"] ?></td> 
-										<td><?php echo $row_carteirinha["aplicador"] ?></td> 
+									<tr id = "dependetes" class='table-success'>  
+										
 									</tr>
-								
 								</tbody>
-							</table><?php }?>
+							</table>
+						</div>
 						</div>
 					</ul>
 				</ul>

@@ -3,6 +3,7 @@
 	<head>
 		<meta charset ='utf-8'/>
 		<script src = "jquery-3.4.1.min.js"></script>
+		<script src = "./js/carteirinha.js"></script>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="estilo.css"/>
 		<div class='row container-fluid'>
