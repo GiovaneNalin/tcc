@@ -55,6 +55,6 @@
 
         $con_dependente = mysqli_query($conexao, $consulta_dependente) or die ($mysqli->error);
 
-        echo json_encode(mysqli_fetch_all($con_dependente));
+        echo json_encode(mysqli_fetch_all($con_dependente, MYSQLI_ASSOC));
     }
 ?>

@@ -46,24 +46,7 @@
 						<button class ='btn btn-warning'> Próximas vacinas </button><br />
 						
 						<div id = "container-dependentes">
-							<table class='table table-hover'>
-								<thead>
-									<tr> 
-										<th><b>Dose</b></th> 
-										<th><b>Lote</b></th>
-										<th><b>Data aplicada</b></th>
-										<th><b>Data agendada</b></th>
-										<th><b>Local</b></th>
-										<th><b>Rubrica</b></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr id = "dependetes" class='table-success'>  
-										
-									</tr>
-								</tbody>
-							</table>
-						</div>
+							
 						</div>
 					</ul>
 				</ul>
