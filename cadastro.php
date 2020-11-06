@@ -30,8 +30,7 @@
 		<div class="">
 				<h1 class='bg-primary'><img src='img/logo.png' width='100px'/>  Sistema de Auxílio à Vacinação</h1>
 		</div>
-	<div class='container-fluid'>	
-		<div align='center'>
+		<div class='container-fluid' align='center'>
 					<!-- CADASTRO -->
 					<h3>CRIAR UMA CONTA.</h3>
 					<form method = "post" action = "insere_usuario.php"><div class='form-group'>
@@ -91,19 +90,9 @@
 							E-mail<input type = 'checkbox' name='alerta' value='2'/>
 						</label><br/>
 						
-						<!--<fieldset class="radio-image">
-							<label for="M">
-								<input type="checkbox" name="sexo" id="w" value="w">
-								<img src="img/wpp.png" alt="Masculino">
-							</label>
-							<label for="F">
-								<input type="checkbox" name="sexo" id="e" value="e">
-								<img src="img/email.png" alt="Feminino">
-							</label>
-						</fieldset>-->
+						
 						<button id='btn' class='btn btn-info'>CADASTRAR</button><br/>
 						<a href='index.php'>Já é cadastrado?</a>
 					</div></form>
 		</div>
-	</div>
 </html>

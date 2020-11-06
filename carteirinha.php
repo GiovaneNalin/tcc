@@ -12,8 +12,6 @@
 			<h1><b> Sua carteirinha </b></h1>
 				<ul>
 					<div><!-- a div se manterá oculta até clicar no nome do dono da carteirinha -->
-					<input type ='text' name='nome_vacina' placeholder='Pesquisar vacina por nome:'/>
-					<button class ='btn btn-info'> Filtrar </button><br />
 					<button class ='btn btn-warning'> Próximas vacinas </button><br />
 					
 						<table id = "carteirinha" class='table table-hover'>
@@ -41,8 +39,6 @@
 				<ul>
 					<ul>
 						<div><!-- a div se manterá oculta até clicar no nome do dono da carteirinha -->
-						<input type ='text' name='nome_vacina' placeholder='Pesquisar vacina por nome:'/>
-						<button class ='btn btn-info'> Filtrar </button><br />
 						<button class ='btn btn-warning'> Próximas vacinas </button><br />
 						
 						<div id = "container-dependentes">

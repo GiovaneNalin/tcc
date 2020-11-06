@@ -15,20 +15,21 @@
 			if(isset($_SESSION["autorizado"])){
 		?>
 			
-		<div class='row container-fluid'>
-				<a href="perfil.php"><img width='50px'src='img/perfil.png'></a>
+		<div class='row container-fluid'>				
 			
 			<?php //checar a página que o usuário fez login
 					if(isset($_SESSION["autorizado"]) and $_SESSION["pagina"] == "paciente"){
-							echo"<a href='home_paciente.php'>| Home |</a>
+							echo"<a href='perfil.php'><img width='50px'src='img/perfil.png'></a>
+							<a href='home_paciente.php'>| Home |</a>
 							<a href='carteirinha.php'> Carteirinha |</a>
 							<a href='logout.php'> Logout |</a>";
 					}
 					
 					if(isset($_SESSION["autorizado"]) and $_SESSION["permissao"] == 1 and $_SESSION["pagina"] == "agente"){
-							echo"<a href='home_agente.php'>| Home |</a>
+							echo"<a href='home_agente.php'>Home |</a>
 							<a href='vacina.php'> Vacinas |</a>
 							<a href='dose.php'> Doses |</a>
+							<a href='lote.php'> Lote |</a>
 							<a href='logout.php'> Logout |</a>";
 					}
 					
