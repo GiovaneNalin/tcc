@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang = "pt-BR">
 	<head>
@@ -11,25 +12,23 @@
 	
 	include("conexao.php");
 	
-	$cpf = $SESSION_POST["autorizado"];
-	$consulta_nome_aplicador= "SELECT nome FROM paciente WHERE cpf = '$Scpf' ";
-	$resultado_nome =  mysqli_query($conexao,$consulta_nome_aplicador) or die ("ERRO");
+	$cpf = $_SESSION["autorizado"];
 	
 	$lote = $_POST["lote"];
 	$data_tomada = date('Y/m/d');
 	$data_agendada = "";
 	$confirmacao = '1';
 	$local = $_POST["local"];
-	$aplicador = $resultado_nome;
+	$aplicador = $cpf;
 	$cpf_paciente = $_POST["cpf_paciente"];
 	
 	$insercao = "INSERT INTO dose
 						VALUES ('$lote',
-								'$data_tomada'
-								'$data_agendada'
-								'$confirmacao'
-								'$local'
-								'$aplicador'
+								'$data_tomada',
+								'$data_agendada',
+								'$confirmacao',
+								'$local',
+								'$aplicador',
 								'$cpf_paciente'
 								)";
 	mysqli_error($conexao);

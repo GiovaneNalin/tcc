@@ -15,7 +15,7 @@
 			<h1>Consultar paciente</h1>
 			
 				<label align='left'>
-					<input type='text' class=' form-control' name='consulta' placeholder='Consultar Paciente'/>
+					<input type='text' class=' form-control' name='consulta' placeholder='Insira o cpf do paciente'/>
 				</label>
 		</div>
 	</body>

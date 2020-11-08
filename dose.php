@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php include("conexao.php");
+session_start();?>
 <!DOCTYPE html>
 <html lang = "pt-BR">
 	<head>
@@ -17,11 +18,11 @@
 			<form method = "post" action = "insere_dose.php"><div class='form-group'>
 			
 				<label align='left'>
-					Vacina e Lote correspondente: <br /><select class='form-control' name = 'lote'>
-							<option>:: Vacina | Lote</option>
+					Vacina e Lote correspondente: <br /><select required='required' class='form-control' name = 'lote'>
+							<option value="" disabled selected>:: Vacina | Lote</option>
 							<?php
-								$consulta_local = "SELECT * FROM lote";/*
-								$resultado_lote = mysqli_query($conexao,$consulta_lote) or die ("ERRO");*/
+								$consulta_lote = "SELECT * FROM lote";
+								$resultado_lote = mysqli_query($conexao,$consulta_lote) or die ("ERRO");							
 								while($linha=mysqli_fetch_assoc($resultado_lote)){
 									echo '<option value = "'. $linha["id"] .'">'. $linha["tipo_vacina"]." | ". $linha["id"].'</option>';
 								}
@@ -36,14 +37,14 @@
 				
 				<label align='left'>Local:
 					<select class='form-control' name = 'local'>					
-						<option>:: Local </option>	
+						<option value="" disabled selected>:: Local </option>	
 							<?php
-								$consulta_local = "SELECT * FROM local";/*
+								$consulta_local = "SELECT * FROM local";
 								$resultado_local = mysqli_query($conexao,$consulta_local) or die ("ERRO");
 								
 								while($linha=mysqli_fetch_assoc($resultado_local)){
 									echo '<option value = "'. $linha["id_postinho"] .'">'.$linha["nome"] .'</option>';
-								}*/
+								}
 							?>
 					</select>
 				</label>
