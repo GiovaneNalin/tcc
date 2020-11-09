@@ -22,7 +22,7 @@
 			header("location: home_agente.php");
 		}
 		if($_SESSION["pagina"]=="administrador"){
-			header("location: home_administrador.php");
+			header("location: usuario.php");
 		}
 	}else{
 		echo"1";

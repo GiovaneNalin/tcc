@@ -25,11 +25,11 @@
 								}
 							?>
 							<label align='left'>CPF
-								<input class=' form-control' maxlength='11' type="number" name="cpf" placeholder="CPF">
+								<input required='required' class=' form-control' maxlength='11' type="number" name="cpf" placeholder="CPF">
 							</label>
 							<br />
 							<label align='left'>Senha
-								<input class='form-control' maxlength='6' type="password" name="senha" placeholder="Senha">
+								<input required='required' class='form-control' maxlength='6' type="password" name="senha" placeholder="Senha">
 							</label >
 								<input type="hidden" name="pagina" value="administrador"/>
 							<div>
