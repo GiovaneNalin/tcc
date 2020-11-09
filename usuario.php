@@ -1,7 +1,14 @@
-<?php
-	include ("menu.php");
-	include("verificacao_administrador.php");
-	if(isset($_SESSION["autorizado"]) and $_SESSION["permissao"] == 2){
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang = "pt-BR">
+	<head>
+		<meta charset = "UTF-8" />
+		<title> SAV - HOME </title>
+	
+	<?php
+		include ("menu.php");
+		include("verificacao_administrador.php");
+		if(isset($_SESSION["autorizado"]) and $_SESSION["permissao"] == 2){		
 	?>
 		<script>
 		var id = null;
@@ -136,7 +143,8 @@
 			});											
 		});
 		</script>
-		
+	</head>
+	<body class='body_administrador'>
 	<div class='container-fluid' align='center'>
 	</div>
 	<br /><br />
@@ -148,6 +156,68 @@
 	?>
 	<div class='container-fluid' align='center'>
 	<div>
+		<div class='container-fluid' align='center'>
+					<!-- CADASTRO -->					
+					<form method = "post" action = "insere_usuario.php"><div class='form-group'>
+						<label align='left'>CPF
+							<input required='required' class='form-control' maxlength='11' type="number" name="cpf" placeholder="CPF">
+						</label>
+						<label align='left'>CPF responsável 
+							<input required='required' class='form-control' maxlength='11' type="number" name="cpf_responsavel" placeholder="CPF">
+						</label>
+						<label align='left'>Nome
+							<input required='required' class='form-control' type='text' name='nome' placeholder="Nome">
+						</label><br />
+						<label align='left'>Telefone
+							<input required='required' class='form-control' type='number' name="telefone" placeholder="(xx) xxxx-xxxx">
+						</label>
+						<label align='left'>E-mail
+							<input required='required' class='form-control' type="email" name="email" placeholder="E-mail">
+						</label><br />
+						<label align='left'>Endereço
+							<input required='required' class='form-control' type="text" name="endereco" placeholder="endereco">
+						</label><br />
+						<p>*Telefone deve conter DDD seguido do número. </p>
+						<label align='left'>Senha
+							<input required='required' class='form-control' maxlength='6' type="password" name="senha" placeholder="Senha">
+						</label>
+						<label align='left'>Confirmar Senha
+							<input required='required' class='form-control' maxlength='6' type="password" name="confirmar_senha" placeholder="Confirmar Senha">
+						</label><br/>
+						<p>*A senha deve conter 6 dígitos. </p>
+						<p>*Pode conter caracteres especiais, letras e números. </p>
+						<label align='left'>Data de nascimento
+							<input required='required' class='form-control' type="date" name="data_nascimento">
+						</label>
+						<div class='form-check form-check-inline radio-image'>
+						<label class=''>Sexo:<br />
+							<label for='m'>
+								<input required='required' class='form-check-input' type="radio" name="sexo" value="m" id='m'/>
+								<img src='img/male.png' class='img'>
+							</label>
+							<label for='f'>
+								<input required='required' class='form-check-input' type="radio" name="sexo" value="f" id='f'/>
+								<img src='img/female.png' class='img'>
+							</label>
+						</label>
+						</div>
+						<label class=''>Gestante?:<br />
+							<label for='s'> Sim
+								<input required='required' class='form-check-input' type="radio" name="gestante" value="s" id='s'/>
+							</label>
+							<label for='n'> Não
+								<input required='required' class='form-check-input' type="radio" name="gestante" value="n" id='n'/>
+							</label>
+						</label><br/>
+						
+						<label align='left'>Selecione um meio para alertas:<br/>
+							Whatsapp<input type = 'checkbox' name='alerta' value='1'/>
+							E-mail<input type = 'checkbox' name='alerta' value='2'/>
+						</label><br/>
+						
+						<input type = "button" class = "cadastrar btn btn-info" value = "Cadastrar" />						
+					</div></form>
+		</div>
 			<form name='fltro'>
 				<input type ='text' name='cpf_filtro' placeholder='Pesquisar por cpf...' />
 				
@@ -168,6 +238,7 @@
 					<th> Permissão </th>
 					<th> Senha </th>
 					<th> Telefone </th>
+					<th> Ação </th>
 				</tr>
 			</thead>
 			<tbody id = "tb_paciente"></tbody>

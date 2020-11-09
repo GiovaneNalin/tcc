@@ -14,7 +14,7 @@
 	$senha = $_POST["senha"];
 	$telefone = $_POST["telefone"];
 	
-	$alteracao = "UPDATE filial SET 
+	$alteracao = "UPDATE paciente SET 
 				cpf = '$cpf',
 				nome = '$nome',
 				email = '$email',
