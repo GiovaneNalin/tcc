@@ -1,6 +1,5 @@
-<?php 
+<?php include("conexao.php");
 	session_start();
-	include("conexao.php");
 	include ("menu.php");
 	if(!empty($_SESSION["autorizado"])){
 		$consulta = "SELECT cpf,
@@ -22,6 +21,7 @@
 	<div>
 		<div>
 			<h1> Dados de usuário </h1>
+			<?php echo $dado["cpf"] ?>
 		</div>
 		<div>
 			<table class='table'>
