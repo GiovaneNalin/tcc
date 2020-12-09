@@ -31,10 +31,6 @@ session_start();?>
 						</select>
 				</label>
 				
-				<!--<label align='left'>Data Agendada:
-					<input class='form-control' type='date' name='data_agendada' placeholder="data agendada">
-				</label>-->
-				
 				<label align='left'>Local:
 					<select class='form-control' name = 'local'>					
 						<option value="" disabled selected>:: Local </option>	
