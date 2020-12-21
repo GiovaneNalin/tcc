@@ -12,7 +12,14 @@
 	</head>
 	<body class='body_agente'>
 		<div class='form-group container-fluid' align='center'>
-			<h1>Bem vindo à plataforma!</h1>
+			<h1>Consultar paciente</h1>
+			
+				<form action="<?php echo $_SERVER['PHP_SELF'];?>">
+					<input type='number' class=' form-control' name='parametro' placeholder='Consultar Paciente pelo CPF'/>
+					<input type='submit' value='Buscar'/>
+				</form>
+				
+				<?php include("listar_carteirinha.php");?>
 		</div>
 	</body>
 </html>

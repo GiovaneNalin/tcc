@@ -1,6 +1,7 @@
 <?php include("conexao.php");
 	session_start();
 	include ("menu.php");
+	$cpf = $_SESSION["autorizado"];
 	if(!empty($_SESSION["autorizado"])){
 		$consulta = "SELECT cpf,
 							nome,
@@ -11,7 +12,7 @@
 							cpf_responsavel,
 							endereco,
 							telefone							 
-					FROM paciente";
+					FROM paciente WHERE cpf=$cpf";
 		$con = mysqli_query($conexao, $consulta) or die ($mysqli->error);
 		$dado=$con->fetch_array();
 ?>
@@ -21,7 +22,6 @@
 	<div>
 		<div>
 			<h1> Dados de usuário </h1>
-			<?php echo $dado["cpf"] ?>
 		</div>
 		<div>
 			<table class='table'>

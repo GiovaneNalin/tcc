@@ -14,6 +14,7 @@
 	<div>
 		<div align='center'>
 			<h1> Últimas Notícias </h1>
+			<?php include ("rss_noticia.php"); ?>
 		</div>
 	</div>
 	

@@ -56,19 +56,13 @@ session_start();?>
 			
 			<h1>Consultar lote</h1>
 			
-				<label align='left'>
-					<input type='text' class=' form-control' name='consulta' placeholder='Consultar lote'/>
-				</label>
+				<form action="<?php echo $_SERVER['PHP_SELF'];?>">
+					<input type='number' class=' form-control' name='parametro' placeholder='Consultar Lote'/>
+					<input type='submit' value='Buscar'/>
+				</form>
 				
-				<span id="conteudo"></span>
-				<script>
-					$(document).ready(function () {
-						$.post('listar_lote.php', function(retorna){
-							//Subtitui o valor no seletor id="conteudo"
-							$("#conteudo").html(retorna);
-						});
-					});
-				</script>
+				<?php include("listar_lote.php");?>
+				
 		</div>
 	</body>
 </html>

@@ -29,19 +29,12 @@
 			
 			<h1>Consultar vacina</h1>
 			
-				<label align='left'>
-					<input type='text' class=' form-control' name='consulta' placeholder='Consultar Vacina'/>
-				</label>
+				<form action="<?php echo $_SERVER['PHP_SELF'];?>">
+					<input type='text' class=' form-control' name='parametro' placeholder='Consultar Vacina'/>
+					<input type='submit' value='Buscar'/>
+				</form>
 				
-				<span id="conteudo"></span>
-				<script>
-					$(document).ready(function () {
-						$.post('listar_vacina.php', function(retorna){
-							//Subtitui o valor no seletor id="conteudo"
-							$("#conteudo").html(retorna);
-						});
-					});
-				</script>
+				<?php include("listar_vacina.php");?>
 		</div>
 	</body>
 </html>

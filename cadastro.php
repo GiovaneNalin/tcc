@@ -1,13 +1,5 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang ='pt-BR'>
-	<head>
-		<meta charset ='utf-8'/>
-		<!--<script src = "cadastrar_usuario.js"></script>-->
-		<title> Index - Carteirinha de vacinação digital </title>
-		<script src = "jquery-3.4.1.min.js"></script>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="estilo.css"/>
+<?php session_start();
+	include ("menu.php"); ?>
 		<style>
 			.radio-image label > input{
 				visibility: hidden;
@@ -26,13 +18,10 @@
 			}
 		</style>
 	</head>
-	<body class='bg-info'>
-		<div class="">
-				<h1 class='bg-primary'><img src='img/logo.png' width='100px'/>  Sistema de Auxílio à Vacinação</h1>
-		</div>
+	<body class='body_agente'>
 		<div class='container-fluid' align='center'>
 					<!-- CADASTRO -->
-					<h3>CRIAR UMA CONTA.</h3>
+					<h3>Cadastrar um paciente.</h3>
 					<form method = "post" action = "insere_usuario.php"><div class='form-group'>
 						<label align='left'>CPF
 							<input required='required' class='form-control' maxlength='11' type="number" name="cpf" placeholder="CPF">
@@ -43,6 +32,7 @@
 						<label align='left'>Nome
 							<input required='required' class='form-control' type='text' name='nome' placeholder="Nome">
 						</label><br />
+						<p>*Telefone deve conter o DDD seguido do número. </p>
 						<label align='left'>Telefone
 							<input required='required' class='form-control' type='number' name="telefone" placeholder="(xx) xxxx-xxxx">
 						</label>
@@ -52,7 +42,6 @@
 						<label align='left'>Endereço
 							<input required='required' class='form-control' type="text" name="endereco" placeholder="endereco">
 						</label><br />
-						<p>*Telefone deve conter DDD seguido do número. </p>
 						<label align='left'>Senha
 							<input required='required' class='form-control' maxlength='6' type="password" name="senha" placeholder="Senha">
 						</label>
@@ -67,32 +56,31 @@
 						<div class='form-check form-check-inline radio-image'>
 						<label class=''>Sexo:<br />
 							<label for='m'>
-								<input required='required' class='form-check-input' type="radio" name="sexo" value="m" id='m'/>
+								<input required='required' class='form-check-input' type="radio" name="sexo" value="masculino" id='m'/>
 								<img src='img/male.png' class='img'>
 							</label>
 							<label for='f'>
-								<input required='required' class='form-check-input' type="radio" name="sexo" value="f" id='f'/>
+								<input required='required' class='form-check-input' type="radio" name="sexo" value="feminino" id='f'/>
 								<img src='img/female.png' class='img'>
 							</label>
 						</label>
 						</div>
-						<label class=''>Gestante?:<br />
+						<!--<label class=''>Gestante?:<br />
 							<label for='s'> Sim
-								<input required='required' class='form-check-input' type="radio" name="gestante" value="s" id='s'/>
+								<input required='required' class='form-check-input' type="radio" name="gestante" value="sim" id='s'/>
 							</label>
 							<label for='n'> Não
-								<input required='required' class='form-check-input' type="radio" name="gestante" value="n" id='n'/>
+								<input required='required' class='form-check-input' type="radio" name="gestante" value="nao" id='n'/>
 							</label>
 						</label><br/>
 						
 						<label align='left'>Selecione um meio para alertas:<br/>
 							Whatsapp<input type = 'checkbox' name='alerta' value='1'/>
 							E-mail<input type = 'checkbox' name='alerta' value='2'/>
-						</label><br/>
+						</label><br/> -->
 						
 						
 						<button id='btn' class='btn btn-info'>CADASTRAR</button><br/>
-						<a href='index.php'>Já é cadastrado?</a>
 					</div></form>
 		</div>
 </html>

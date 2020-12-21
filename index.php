@@ -33,8 +33,6 @@
 				</div>
 				
 				<div>
-					<h1> Ou se cadastre clicando no link abaixo </h1>
-					<a href='cadastro.php'> Cadastre-se aqui! </a>
 					<br /><br /><br />
 				</div>
 			</div>

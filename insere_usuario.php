@@ -43,7 +43,7 @@
 
 		
 	echo "<script language=javascript>alert( 'Cadastro realizado com sucesso!' );</script>";
-	header("location: index.php");
+	header("location: cadastro.php");
 ?>
 	<body>
 </html>

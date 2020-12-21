@@ -2,7 +2,12 @@
 include_once "conexao.php";
 
 //consultar no banco de dados
-$result_lote = "SELECT * FROM lote ORDER BY id DESC";
+$parametro = filter_input(INPUT_GET, "parametro");
+if($parametro){
+	$result_lote = "SELECT * FROM lote WHERE id LIKE '$parametro%' ORDER BY id DESC";
+}else{
+	$result_lote = "SELECT * FROM lote ORDER BY id DESC";
+}
 $resultado_lote = mysqli_query($conexao, $result_lote);
 
 //Verificar se encontrou resultado na tabela "usuarios"
@@ -19,13 +24,13 @@ if(($resultado_lote) AND ($resultado_lote->num_rows != 0)){
 	</tr>";
 	while($row_lote = mysqli_fetch_assoc($resultado_lote)){
 		echo "<tr><td>";
-		echo $row_lote['id'] . "</td><br><td>";
-		echo $row_lote['tipo_vacina'] . "</td><br><td>";
-		echo $row_lote['fabricante'] . "</td><br><td>";
-		echo $row_lote['origem'] . "</td><br><td>";
-		echo $row_lote['destino'] . "</td><br><td>";
-		echo $row_lote['data_fabricacao'] . "</td><br><td>";
-		echo $row_lote['data_validade'] . "</td><br>";
+		echo $row_lote['id'] . "</td><td>";
+		echo $row_lote['tipo_vacina'] . "</td><td>";
+		echo $row_lote['fabricante'] . "</td><td>";
+		echo $row_lote['origem'] . "</td><td>";
+		echo $row_lote['destino'] . "</td><td>";
+		echo $row_lote['data_fabricacao'] . "</td><td>";
+		echo $row_lote['data_validade'] . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";

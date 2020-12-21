@@ -27,8 +27,11 @@
 					
 					if(isset($_SESSION["autorizado"]) and $_SESSION["permissao"] == 1 and $_SESSION["pagina"] == "agente"){
 							echo"<a href='home_agente.php'>Home |</a>
+							<a href='cadastro.php'> Cadastrar Paciente |</a>
 							<a href='vacina.php'> Vacinas |</a>
-							<a href='dose.php'> Doses |</a>
+							<a href='dose.php'> Aplicar Dose |</a>
+							<a href='agenda_dose.php'> Agendar Dose |</a>
+							<a href='consulta_paciente.php'> Consultar Paciente |</a>
 							<a href='lote.php'> Lote |</a>
 							<a href='logout.php'> Logout |</a>";
 					}
