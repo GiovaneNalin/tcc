@@ -21,10 +21,10 @@ session_start();?>
 					Vacina e Lote correspondente: <br /><select required='required' class='form-control' name = 'lote'>
 							<option value="" disabled selected>:: Vacina | Lote</option>
 							<?php
-								$consulta_lote = "SELECT * FROM lote";
+								$consulta_lote = "SELECT * FROM lote INNER JOIN vacina on lote.tipo_vacina = vacina.id_vacina";
 								$resultado_lote = mysqli_query($conexao,$consulta_lote) or die ("ERRO");							
 								while($linha=mysqli_fetch_assoc($resultado_lote)){
-									echo '<option value = "'. $linha["id"] .'">'. $linha["tipo_vacina"]." | ". $linha["id"].'</option>';
+									echo '<option value = "'. $linha["id"] .'">'. $linha["tipo"]." | ". $linha["id"].'</option>';
 								}
 							?>
 							
@@ -39,7 +39,7 @@ session_start();?>
 								$resultado_local = mysqli_query($conexao,$consulta_local) or die ("ERRO");
 								
 								while($linha=mysqli_fetch_assoc($resultado_local)){
-									echo '<option value = "'. $linha["id_postinho"] .'">'.$linha["nome"] .'</option>';
+									echo '<option value = "'. $linha["id_postinho"] .'">'.$linha["nome_postinho"] .'</option>';
 								}
 							?>
 					</select>

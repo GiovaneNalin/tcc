@@ -21,11 +21,11 @@ session_start();?>
 					Vacina: <br /><select required='required' class='form-control' name = 'tipo_vacina'>
 							<option value="" disabled selected>:: Vacina</option>
 							<?php
-								$consulta_vacina = "SELECT tipo FROM vacina";
+								$consulta_vacina = "SELECT * FROM vacina";
 								$resultado_vacina = mysqli_query($conexao,$consulta_vacina) or die ("ERRO");
 								
 								while($linha=mysqli_fetch_assoc($resultado_vacina)){
-									echo '<option value = "'. $linha["tipo"] .'">'.$linha["tipo"] .'</option>';
+									echo '<option value = "'. $linha["id_vacina"] .'">'.$linha["tipo"] .'</option>';
 								}
 							?>
 							

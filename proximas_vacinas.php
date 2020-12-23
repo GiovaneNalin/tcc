@@ -5,13 +5,16 @@ include_once "conexao.php";
 
 //consulta próximas doses do usuário logado
 $cpf= $_SESSION["autorizado"];
-$result_prox = "SELECT tipo_vacina, data_agendada FROM agendamento WHERE cpf_paciente = $cpf ORDER BY data_agendada DESC ";
+$result_prox = "SELECT * FROM agendamento  
+						INNER JOIN vacina ON vacina.id_vacina = agendamento.tipo_vacina
+						WHERE cpf_paciente = $cpf ORDER BY data_agendada DESC ";
 $result_dose = "SELECT * FROM dose 
-					INNER JOIN lote ON lote.id = dose.lote 
-					INNER JOIN paciente ON paciente.cpf = dose.aplicador 
-					INNER JOIN local ON local.id_postinho = dose.local
-					WHERE cpf_paciente = $cpf  
-					ORDER BY data_tomada DESC ";
+						INNER JOIN lote ON lote.id = dose.lote 
+						INNER JOIN paciente ON paciente.cpf = dose.aplicador 
+						INNER JOIN local ON local.id_postinho = dose.local
+						INNER JOIN vacina ON  vacina.id_vacina = lote.tipo_vacina 
+						WHERE cpf_paciente = $cpf  
+						ORDER BY data_tomada DESC ";
 					
 //$result_dose = "SELECT * FROM lote INNER JOIN dose ON lote.id = dose.lote WHERE cpf_paciente = $cpf AND data_agendada = '00-00-0000' ORDER BY data_tomada DESC";
 
@@ -31,7 +34,7 @@ if(($resultado_prox) AND ($resultado_prox->num_rows != 0)){
 	<thead>";
 	while($row_prox = mysqli_fetch_assoc($resultado_prox)){
 		echo "<tbody><tr><td>";
-		echo $row_prox['tipo_vacina'] . "</td><br><td>";
+		echo $row_prox['tipo'] . "</td><br><td>";
 		echo $row_prox['data_agendada'] . "</td>";
 		echo "</tr></tbody>";
 	}
@@ -54,7 +57,7 @@ if(($resultado_dose) AND ($resultado_dose->num_rows != 0)){
 	<thead>";
 	while($row_dose = mysqli_fetch_assoc($resultado_dose)){
 		echo "<tbody><tr><td>";
-		echo $row_dose['tipo_vacina'] . "</td><td>";
+		echo $row_dose['tipo'] . "</td><td>";
 		echo $row_dose['id_dose'] . "</td><td>";
 		echo $row_dose['lote'] . "</td><td>";
 		echo $row_dose['data_tomada'] . "</td><td>";

@@ -14,15 +14,17 @@ $resultado_vacina = mysqli_query($conexao, $result_vacina);
 if(($resultado_vacina) AND ($resultado_vacina->num_rows != 0)){
 	echo"<table border='1'>
 	<tr> 
+		<td> ID Vacina </td> 
 		<td> Vacina </td> 
 		<td> Descrição </td> 
 		<td> Ação </td> 
 	</tr>";
 	while($row_vacina = mysqli_fetch_assoc($resultado_vacina)){
 		echo "<tr><td>";
+		echo $row_vacina['id_vacina'] . "</td><td>";
 		echo $row_vacina['tipo'] . "</td><td>";
 		echo $row_vacina['descricao'] . "</td>";?>
-		<td><a href="<?php echo "altera_vacina.php?tipo=". $linha['tipo'] ."&descricao=".$linha['descricao']?>">Alterar</a></td>
+		<td><a href="<?php echo "altera_vacina.php?id_vacina=". $row_vacina['id_vacina'] ."&tipo=".$row_vacina['tipo']."&descricao=".$row_vacina['descricao']?>">Alterar</a></td>
 		
 		<?php echo "</tr>";
 	}

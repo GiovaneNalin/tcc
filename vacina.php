@@ -19,7 +19,7 @@
 					<input required='required' class='form-control' type='text' name='tipo' placeholder="Nome">
 				</label><br />
 				<label align='left'>Descrição:<br/>
-					<textarea required='required' class='form-control' name="descricao" rows="10" cols="30"> </textarea>
+					<input required='required' class='form-control' name="descricao">
 				</label><br/>
 				<button id='btn' class='btn btn-info'>CADASTRAR</button><br/>
 			</div></form>

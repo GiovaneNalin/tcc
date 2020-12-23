@@ -27,7 +27,7 @@ session_start();?>
 								$resultado_vacina = mysqli_query($conexao,$consulta_vacina) or die ("ERRO");
 								
 								while($linha=mysqli_fetch_assoc($resultado_vacina)){
-									echo '<option value = "'. $linha["tipo"] .'">'.$linha["tipo"] .'</option>';
+									echo '<option value = "'. $linha["id_vacina"] .'">'.$linha["tipo"] .'</option>';
 								}
 							?>
 					</select>
@@ -57,7 +57,7 @@ session_start();?>
 			<h1>Consultar lote</h1>
 			
 				<form action="<?php echo $_SERVER['PHP_SELF'];?>">
-					<input type='number' class=' form-control' name='parametro' placeholder='Consultar Lote'/>
+					<input type='number' class=' form-control' name='parametro' placeholder='Consultar Lote pelo número'/>
 					<input type='submit' value='Buscar'/>
 				</form>
 				

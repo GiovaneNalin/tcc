@@ -14,7 +14,7 @@
 	$tipo = $_POST["tipo"];
 	$descricao = $_POST["descricao"];
 	
-	$insercao = "INSERT INTO vacina
+	$insercao = "INSERT INTO vacina (tipo, descricao)
 						VALUES ('$tipo',
 								'$descricao'
 								)";
