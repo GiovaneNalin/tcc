@@ -25,7 +25,7 @@
 				<label align='left'>Descrição:<br/>
 					<input required='required' class='form-control' value = '<?php echo $descricao ?>' name="descricao"/> 
 				</label><br/>
-				<input id='btn' type='submit' value ='Alterar' class='btn btn-info'>
+				<input id='btn' type='submit' value ='Alterar' class='btn btn-danger'>
 				<button href ='vacina.php' id='btn' class='btn btn-info'>Cancelar</button><br/>
 			</div></form>
 		</div>

@@ -34,7 +34,6 @@
 							<div>
 								<button id='btn' class='btn btn-info'>LOGIN</button><br/>
 							</div>
-							<a href='cadastro.php'>Clique aqui para se cadastrar</a><br />
 							<a href='esqueceu_senha.php'>Esqueceu a senha?</a><br />
 							<a href='index.php'>Não é agente de saúde? Clique aqui e selecione outra forma de login.</a>
 						</div></form>

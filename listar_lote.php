@@ -14,7 +14,8 @@ $resultado_lote = mysqli_query($conexao, $result_lote);
 
 //Verificar se encontrou resultado na tabela "usuarios"
 if(($resultado_lote) AND ($resultado_lote->num_rows != 0)){
-	echo"<table border='1'>
+	echo"<table border='1' class='table table-hover'>
+	<thead>
 	<tr> 
 		<td> N° lote </td> 
 		<td> Vacina </td> 
@@ -23,8 +24,8 @@ if(($resultado_lote) AND ($resultado_lote->num_rows != 0)){
 		<td> País de Destino </td> 
 		<td> Data de Fabricação </td> 
 		<td> Data de Validade </td> 
-		<td> Ação </td> 
-	</tr>";
+		<td colspan='2'> Ação </td> 
+	</tr></thead><tbody>";
 	while($row_lote = mysqli_fetch_assoc($resultado_lote)){
 		echo "<tr><td>";
 		echo $row_lote['id'] . "</td><td>";
@@ -34,7 +35,7 @@ if(($resultado_lote) AND ($resultado_lote->num_rows != 0)){
 		echo $row_lote['destino'] . "</td><td>";
 		echo $row_lote['data_fabricacao'] . "</td><td>";
 		echo $row_lote['data_validade'] . "</td>";?>
-		<td><a href="<?php echo "altera_lote.php?id=". $row_lote['id'] 
+		<td><a class='btn btn-warning' href="<?php echo "altera_lote.php?id=". $row_lote['id'] 
 												."&tipo_vacina=".$row_lote['tipo_vacina'].
 												"&fabricante=".$row_lote['fabricante'].
 												"&origem=".$row_lote['origem'].
@@ -42,8 +43,9 @@ if(($resultado_lote) AND ($resultado_lote->num_rows != 0)){
 												"&data_fabricacao=".$row_lote['data_fabricacao'].
 												"&data_validade=".$row_lote['data_validade']
 												?>">Alterar</a></td>
+		<td><a class='btn btn-danger' href="<?php echo "remove_lote.php?id=". $row_lote['id']?>">Remover</a></td>
 		
-		<?php echo "</tr>";
+		<?php echo "</tr></tbody>";
 	}
 	echo "</table>";
 }else{

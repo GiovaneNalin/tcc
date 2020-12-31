@@ -58,8 +58,8 @@ session_start();?>
 			
 				<form action="<?php echo $_SERVER['PHP_SELF'];?>">
 					<input type='number' class=' form-control' name='parametro' placeholder='Consultar Lote pelo número'/>
-					<input type='submit' value='Buscar'/>
-				</form>
+					<input class='btn btn-info' type='submit' value='Buscar'/>
+				</form><br /><br />
 				
 				<?php include("listar_lote.php");?>
 				

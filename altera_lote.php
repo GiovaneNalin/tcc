@@ -53,7 +53,7 @@ session_start();?>
 					<input required='required' class='form-control' type='date' value='<?php echo $data_validade; ?>' name='data_validade' placeholder="Data de validade">
 				</label><br />
 				
-				<input id='btn' type='submit' value ='Alterar' class='btn btn-info'>
+				<input id='btn' type='submit' value ='Alterar' class='btn btn-danger'>
 				<button href ='lote.php' id='btn' class='btn btn-info'>Cancelar</button><br/>
 			</div></form>
 		</div>

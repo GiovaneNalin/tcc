@@ -19,7 +19,7 @@
 					<input required='required' class='form-control' type='text' name='tipo' placeholder="Nome">
 				</label><br />
 				<label align='left'>Descrição:<br/>
-					<input required='required' class='form-control' name="descricao">
+					<input required='required' class='form-control' type='text' name="descricao" placeholder='Descrição'>
 				</label><br/>
 				<button id='btn' class='btn btn-info'>CADASTRAR</button><br/>
 			</div></form>
@@ -30,9 +30,9 @@
 			<h1>Consultar vacina</h1>
 			
 				<form action="<?php echo $_SERVER['PHP_SELF'];?>">
-					<input type='text' class=' form-control' name='parametro' placeholder='Consultar Vacina'/>
-					<input type='submit' value='Buscar'/>
-				</form>
+					<input type='text' class=' form-control' name='parametro' placeholder='Consultar Vacina Pelo Nome'/>
+					<input class='btn btn-info' type='submit' value='Buscar'/>
+				</form><br /><br />
 				
 				<?php include("listar_vacina.php");?>
 		</div>

@@ -13,7 +13,13 @@
 	</head>
 	<body class='body_administrador'>
 		<div class='form-group container-fluid' align='center'>
-			<a href = "administrador_paciente.php"><img src='img/botao_paciente.png' width='200px'></a>
+			<div align='center' class='container-fluid'>
+				<h1> Gerenciar: </h1>
+				<div class='row container-fluid'>
+					<a class='col-lg-6 col-sm-12' href='paciente.php'><img src='img/usuarios.png' width='300px'/></a>
+					<a class='col-lg-6 col-sm-12' href='local.php'><img src='img/postos.png' width='300px'/></a>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

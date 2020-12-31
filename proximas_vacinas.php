@@ -13,7 +13,7 @@ $result_dose = "SELECT * FROM dose
 						INNER JOIN paciente ON paciente.cpf = dose.aplicador 
 						INNER JOIN local ON local.id_postinho = dose.local
 						INNER JOIN vacina ON  vacina.id_vacina = lote.tipo_vacina 
-						WHERE cpf_paciente = $cpf  
+						WHERE cpf_paciente = $cpf 
 						ORDER BY data_tomada DESC ";
 					
 //$result_dose = "SELECT * FROM lote INNER JOIN dose ON lote.id = dose.lote WHERE cpf_paciente = $cpf AND data_agendada = '00-00-0000' ORDER BY data_tomada DESC";

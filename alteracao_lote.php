@@ -19,7 +19,7 @@
 															data_validade='$data_validade'
 															WHERE id='$id';");
 		if($query){
-			//header("location:lote.php");
+			header("location:lote.php");
 		}else{
 			die("Erro: ". mysqli_error($link));
 		}

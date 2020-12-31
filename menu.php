@@ -37,7 +37,8 @@
 					
 					if(isset($_SESSION["autorizado"]) and $_SESSION["permissao"] == 2 and $_SESSION["pagina"] == "administrador"){
 							echo"<a href='home_administrador.php'>| Home |</a>
-							<a href='usuario.php'> Gerenciar Usuário |</a>
+							<a href='paciente.php'> Gerenciar Usuário |</a>
+							<a href='local.php'> Gerenciar Postos de Saúde |</a>
 							<a href='logout.php'> Logout |</a>";
 					}
 			}

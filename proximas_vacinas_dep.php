@@ -13,7 +13,9 @@ $resultado_dependentes = mysqli_query($conexao, $result_dependentes);
 while($row_dep = mysqli_fetch_assoc($resultado_dependentes)){
 	$cpf_dep = $row_dep['cpf'];
 	$nome_dep = $row_dep['nome'];
-	$result_prox_dep = "SELECT tipo_vacina, data_agendada FROM agendamento WHERE cpf_paciente = $cpf_dep ORDER BY data_agendada DESC ";
+	$result_prox_dep = "SELECT * FROM agendamento  
+						INNER JOIN vacina ON vacina.id_vacina = agendamento.tipo_vacina
+						WHERE cpf_paciente = $cpf_dep ORDER BY data_agendada DESC ";
 	$resultado_prox_dep = mysqli_query($conexao, $result_prox_dep);
 	
 	$result_dose_dep = "SELECT * FROM dose 
@@ -21,7 +23,7 @@ while($row_dep = mysqli_fetch_assoc($resultado_dependentes)){
 						INNER JOIN paciente ON paciente.cpf = dose.aplicador 
 						INNER JOIN local ON local.id_postinho = dose.local
 						INNER JOIN vacina ON  vacina.id_vacina = lote.tipo_vacina 
-						WHERE cpf_paciente = $cpf_dep  
+						WHERE cpf_paciente = $cpf_dep AND cpf != $cpf 
 						ORDER BY data_tomada DESC ";
 	$resultado_dose_dep = mysqli_query($conexao, $result_dose_dep);
 	
