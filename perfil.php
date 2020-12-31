@@ -21,38 +21,40 @@
 	<body class='bg-info'>
 	<div>
 		<div>
-			<h1> Dados de usuário </h1>
+			<h1 align='center'> Dados de usuário </h1>
 		</div>
-		<div>
-			<table class='table'>
-			
+		<div class='container'>
+			<table class='table table-hover'>			
 				<tr><td><b> CPF: </b></td> 
 						<td> <?php echo $dado["cpf"] ?> </td> 
-					<td><b> Nome </b></td> 
+				</tr>
+				
+				<tr><td><b> Nome </b></td> 
 						<td> <?php echo $dado["nome"] ?> </td> 
 				</tr>
 				
 				<tr><td><b> Data de nascimento: </b></td> 
 						<td> <?php echo $dado["data_nascimento"] ?> </td> 
-					<td><b> Sexo </b></td> 
+				</tr>
+				
+				<tr><td><b> Sexo </b></td> 
 						<td> <?php echo $dado["sexo"] ?> </td> 
 				</tr>
 				
 				<tr><td><b> E-mail: </b></td> 
 						<td> <?php echo $dado["email"] ?> </td> 
-					<td><b> Telefone: </b></td> 
+				</tr>
+				
+				<tr><td><b> Telefone: </b></td> 
 						<td> <?php echo $dado["telefone"] ?> </td> 
 				</tr>
 				
-				<tr><td><b> Gestante?: </b></td> 
-						<td> <?php echo $dado["gestante"] ?> </td> 
-					<td><b> CPF do responsável: </b></td> 
+				<tr><td><b> CPF do responsável: </b></td> 
 						<td> <?php echo $dado["cpf_responsavel"] ?> </td> 
 				</tr>
 				<tr><td><b> Endereço: </b></td> 
 						<td> <?php echo $dado["endereco"] ?> </td>
-				</tr>
-				
+				</tr>				
 			</table>
 			<div>
 				<button> Alterar e-mail </button> <button> Alterar senha </button> <button> Alterar telefone </button>

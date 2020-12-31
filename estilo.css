@@ -68,3 +68,9 @@ thead{
 table{
 	background-color:#40E0D0;
 }
+#label1{
+	 background-color: #E0FFFF;
+	 text-align:center;
+	 border: 2px solid;
+	 border-color:#ADD8E6;
+}

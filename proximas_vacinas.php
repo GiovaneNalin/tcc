@@ -25,7 +25,9 @@ $resultado_dose = mysqli_query($conexao, $result_dose);
 
 //Verificar se encontrou resultado na tabela "dose"
 if(($resultado_prox) AND ($resultado_prox->num_rows != 0)){
-	echo"<div class=container><table style='width: 1% !important;'class='table table-hover'>
+	echo"<div id='label1'>
+	<h2 align='left'> Próximas vacinas </h2>
+	<div class=container><table style='width: 1% !important;'class='table table-hover'>
 	<thead>
 		<tr> 
 			<td> Vacina</td> 
@@ -38,13 +40,13 @@ if(($resultado_prox) AND ($resultado_prox->num_rows != 0)){
 		echo $row_prox['data_agendada'] . "</td>";
 		echo "</tr></tbody>";
 	}
-	echo "</table>";
+	echo "</table></div>";
 }else{
 	echo "Nenhum agendamento encontrado";
 }
 //montando a carteirinha
 if(($resultado_dose) AND ($resultado_dose->num_rows != 0)){
-	echo"<div class=container><table class='table table-hover'>
+	echo"<h2 align='left'> Carteirinha </h2><div class=container-fluid><table class='table table-hover'>
 	<thead>
 		<tr> 
 			<td> Dose </td> 
@@ -65,7 +67,7 @@ if(($resultado_dose) AND ($resultado_dose->num_rows != 0)){
 		echo $row_dose['nome'] . "</td>";		
 		echo "</tr></tbody>";
 	}
-	echo "</table>";
+	echo "</table></div></div>";
 }else{
 	echo "Nenhum agendamento encontrado";
 }

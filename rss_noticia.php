@@ -20,10 +20,10 @@ if($rss)
     foreach ( $rss->channel->item as $item )
     {
         // formata e imprime uma string
-		echo"<div class='container'><p style=border-top: 3px solid #000;>";
+		echo"<div id='label1' class='container'><p style=border-top: 3px solid #000;>";
 			printf('<h1><a href="%s" title="%s" >%s</a><br />', $item->link, $item->title, $item->title);echo'</h1>';
 			printf( $item->description, $item->description);
-		echo"</p></div>";
+		echo"</p></div><br/> <br/>";
         // incrementamos a variável $count
         $count++;
         // caso nosso contador seja igual ao limite paramos a iteração

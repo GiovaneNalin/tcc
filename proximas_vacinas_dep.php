@@ -29,8 +29,8 @@ while($row_dep = mysqli_fetch_assoc($resultado_dependentes)){
 	
 //Próximas vacinas de dependentes	
 
-	echo "<h1> $nome_dep </h1>";
-	echo"<button class ='btn btn-warning'> Próximas vacinas </button>
+	echo "<div id='label1'><h1 align='center'> $nome_dep </h1>";
+	echo"<h2 align='left'> Próximas vacinas </h2>
 	<div class=container><table style='width: 1% !important;' class='table table-hover'>
 	<thead>
 		<tr> 
@@ -48,7 +48,8 @@ while($row_dep = mysqli_fetch_assoc($resultado_dependentes)){
 	
 //CARTEIRINHA DEPENDENTE
 	
-	echo"<div class=container><table class='table table-hover'>
+	echo"<h2 align='left'> Carteirinha </h2>
+	<div class=container-fluid><table class='table table-hover'>
 	<thead>
 		<tr> 
 			<td> Dose </td> 
@@ -69,5 +70,5 @@ while($row_dep = mysqli_fetch_assoc($resultado_dependentes)){
 		echo $row_dose_dep['nome'] . "</td>";
 		echo "</tr></tbody>";
 	}
-	echo "</table>";
+	echo "</table></div></div><br/><br/><br/>";
 }
