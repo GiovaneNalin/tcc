@@ -21,7 +21,7 @@
 	<body class='body_agente'>
 		<div class='container-fluid' align='center'>
 					<!-- CADASTRO -->
-					<h3>Cadastrar um paciente.</h3>
+					<h1>Cadastrar um paciente.</h1>
 					<form method = "post" action = "insere_usuario.php"><div class='form-group'>
 						<label align='left'>CPF
 							<input required='required' class='form-control' maxlength='11' type="number" name="cpf" placeholder="CPF">

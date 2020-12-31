@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Out-2020 às 23:06
+-- Tempo de geração: 31-Dez-2020 às 03:39
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.10
 
@@ -24,26 +24,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `agendamento`
+--
+
+CREATE TABLE `agendamento` (
+  `id_agendamento` int(11) NOT NULL,
+  `cpf_paciente` varchar(11) NOT NULL,
+  `tipo_vacina` int(11) NOT NULL,
+  `data_agendada` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `agendamento`
+--
+
+INSERT INTO `agendamento` (`id_agendamento`, `cpf_paciente`, `tipo_vacina`, `data_agendada`) VALUES
+(8, '123', 2, '2020-12-08'),
+(10, '231', 3, '2020-12-18'),
+(11, '321', 7, '2020-12-09');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `dose`
 --
 
 CREATE TABLE `dose` (
-  `nome` varchar(100) NOT NULL,
+  `id_dose` int(11) NOT NULL,
   `lote` int(11) NOT NULL,
   `data_tomada` date DEFAULT NULL,
-  `data_agendada` date DEFAULT NULL,
-  `confirmacao` int(11) NOT NULL,
   `local` int(11) NOT NULL,
-  `aplicador` varchar(100) NOT NULL,
+  `aplicador` int(11) NOT NULL,
   `cpf_paciente` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `dose`
---
-
-INSERT INTO `dose` (`nome`, `lote`, `data_tomada`, `data_agendada`, `confirmacao`, `local`, `aplicador`, `cpf_paciente`) VALUES
-('COVID-19', 123, '2020-10-22', NULL, 1, 123, 'Janaina', '123');
 
 -- --------------------------------------------------------
 
@@ -53,15 +66,17 @@ INSERT INTO `dose` (`nome`, `lote`, `data_tomada`, `data_agendada`, `confirmacao
 
 CREATE TABLE `local` (
   `id_postinho` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL
+  `nome_postinho` varchar(100) NOT NULL,
+  `endereco` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `local`
 --
 
-INSERT INTO `local` (`id_postinho`, `nome`) VALUES
-(123, 'Postinho Vale do Sol');
+INSERT INTO `local` (`id_postinho`, `nome_postinho`, `endereco`) VALUES
+(2, 'Postinho do Vale do Sol', 'Vale do Sol'),
+(4, 'Postinho da Quebrada', 'Acapulco');
 
 -- --------------------------------------------------------
 
@@ -71,17 +86,22 @@ INSERT INTO `local` (`id_postinho`, `nome`) VALUES
 
 CREATE TABLE `lote` (
   `id` int(11) NOT NULL,
+  `tipo_vacina` int(11) NOT NULL,
   `fabricante` varchar(100) NOT NULL,
   `origem` varchar(100) NOT NULL,
-  `destino` varchar(100) NOT NULL
+  `destino` varchar(100) NOT NULL,
+  `data_fabricacao` date NOT NULL,
+  `data_validade` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `lote`
 --
 
-INSERT INTO `lote` (`id`, `fabricante`, `origem`, `destino`) VALUES
-(123, 'Speedwagon', 'Inglaterra', 'Brasil - Araraquara');
+INSERT INTO `lote` (`id`, `tipo_vacina`, `fabricante`, `origem`, `destino`, `data_fabricacao`, `data_validade`) VALUES
+(111, 2, 'SpeedWagonn', 'Inglaterraa', 'Brasill', '2020-12-01', '2020-12-30'),
+(222, 1, 'Industrias Stark', 'EUA', 'Brasil', '2020-12-01', '2020-12-21'),
+(333, 6, 'Silph Co', 'Kanto', 'Brasil', '2020-12-17', '2020-12-30');
 
 -- --------------------------------------------------------
 
@@ -96,7 +116,7 @@ CREATE TABLE `paciente` (
   `data_nascimento` date NOT NULL,
   `sexo` char(10) NOT NULL,
   `gestante` char(1) NOT NULL,
-  `cpf_responsavel` int(11) NOT NULL,
+  `cpf_responsavel` int(11) DEFAULT NULL,
   `endereco` varchar(100) NOT NULL,
   `permissao` int(11) NOT NULL,
   `senha` int(6) NOT NULL,
@@ -108,7 +128,9 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`cpf`, `nome`, `email`, `data_nascimento`, `sexo`, `gestante`, `cpf_responsavel`, `endereco`, `permissao`, `senha`, `telefone`) VALUES
-('123', 'Giorno Giovanna', 'email@email.com', '2020-10-15', 'm', 'n', 123, 'asd', 0, 123, 1623146598);
+('123', 'Kakashi O brabo', 'asdasd@asasd', '2020-10-15', 'masculino', '', 123, 'asd', 0, 123, 1623146598),
+('231', 'Sailor Moon', 'easd@asd', '2020-10-14', 'masculino', 'n', 123, 'AAA', 2, 123, 123),
+('321', 'Naruto Uzumaki', 'asd@asd', '2020-10-14', 'masculino', 'n', 123, 'aaaaa', 1, 123, 123);
 
 -- --------------------------------------------------------
 
@@ -117,26 +139,42 @@ INSERT INTO `paciente` (`cpf`, `nome`, `email`, `data_nascimento`, `sexo`, `gest
 --
 
 CREATE TABLE `vacina` (
+  `id_vacina` int(11) NOT NULL,
   `tipo` varchar(100) NOT NULL,
-  `descricao` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `descricao` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `vacina`
 --
 
-INSERT INTO `vacina` (`tipo`, `descricao`) VALUES
-('COVID-19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at ante mauris. Mauris sed nisi quam. Aenean nec metus sed lectus auctor auctor. Phasellus ullamcorper eros scelerisque erat imperdiet, non lobortis dolor dignissim. Integer a tincidunt eros, sed mollis enim. Curabitur ornare urna quis nunc pulvinar, laoreet ultricies elit pulvinar. Curabitur suscipit arcu ut leo semper imperdiet. Sed auctor tortor vel quam molestie ornare. Aenean nec fringilla libero.');
+INSERT INTO `vacina` (`id_vacina`, `tipo`, `descricao`) VALUES
+(1, 'Triplice bacteriana', 'Contra 99,9% das bactérias'),
+(2, 'Hepatite B', 'A vacina da hepatite B é especialmente recomendada para gestantes que não foram vacinadas na infânci'),
+(3, 'Pneumonia', 'A pneumonia é uma doença que pode atingir pessoas de todas as idades, mas é mais perigosa para crian'),
+(4, 'Febre Amarela', 'A vacina da febre amarela é indicada para pessoas de 6 meses a 60 anos que moram ou que vão viajar p'),
+(5, 'Gripe', 'O vírus causador da gripe apresenta uma alta capacidade de mutação. Por causa disso, a vacina é cons'),
+(6, 'HPV', 'A vacina quadrivalente contra o HPV, ou papiloma vírus humano, também é uma forma de proteção contra'),
+(7, 'Herpes-zóster', 'Qualquer pessoa que teve catapora na infância pode desenvolver o herpes-zóster ou cobreiro, que caus'),
+(9, 'Dengue', 'A vacina da dengue é indicada para pessoas de 9 a 45 anos de idade que vivem em regiões endêmicas de');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
+-- Índices para tabela `agendamento`
+--
+ALTER TABLE `agendamento`
+  ADD PRIMARY KEY (`id_agendamento`),
+  ADD KEY `agendamento_paciente` (`cpf_paciente`),
+  ADD KEY `agendamento_vacina` (`tipo_vacina`);
+
+--
 -- Índices para tabela `dose`
 --
 ALTER TABLE `dose`
-  ADD PRIMARY KEY (`nome`),
+  ADD PRIMARY KEY (`id_dose`),
   ADD KEY `lote` (`lote`),
   ADD KEY `local_dose` (`local`),
   ADD KEY `paciente_dose` (`cpf_paciente`);
@@ -151,7 +189,8 @@ ALTER TABLE `local`
 -- Índices para tabela `lote`
 --
 ALTER TABLE `lote`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `lote_vacina` (`tipo_vacina`);
 
 --
 -- Índices para tabela `paciente`
@@ -163,11 +202,46 @@ ALTER TABLE `paciente`
 -- Índices para tabela `vacina`
 --
 ALTER TABLE `vacina`
-  ADD PRIMARY KEY (`tipo`);
+  ADD PRIMARY KEY (`id_vacina`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `agendamento`
+--
+ALTER TABLE `agendamento`
+  MODIFY `id_agendamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de tabela `dose`
+--
+ALTER TABLE `dose`
+  MODIFY `id_dose` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT de tabela `local`
+--
+ALTER TABLE `local`
+  MODIFY `id_postinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `vacina`
+--
+ALTER TABLE `vacina`
+  MODIFY `id_vacina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `agendamento`
+--
+ALTER TABLE `agendamento`
+  ADD CONSTRAINT `agendamento_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `agendamento_vacina` FOREIGN KEY (`tipo_vacina`) REFERENCES `vacina` (`id_vacina`) ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `dose`
@@ -175,8 +249,13 @@ ALTER TABLE `vacina`
 ALTER TABLE `dose`
   ADD CONSTRAINT `local_dose` FOREIGN KEY (`local`) REFERENCES `local` (`id_postinho`) ON UPDATE CASCADE,
   ADD CONSTRAINT `lote_dose` FOREIGN KEY (`lote`) REFERENCES `lote` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `paciente_dose` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `vacina_dose` FOREIGN KEY (`nome`) REFERENCES `vacina` (`tipo`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `paciente_dose` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf`) ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `lote`
+--
+ALTER TABLE `lote`
+  ADD CONSTRAINT `lote_vacina` FOREIGN KEY (`tipo_vacina`) REFERENCES `vacina` (`id_vacina`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
