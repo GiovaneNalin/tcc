@@ -11,6 +11,7 @@
 							gestante,
 							cpf_responsavel,
 							endereco,
+							senha,
 							telefone							 
 					FROM paciente WHERE cpf=$cpf";
 		$con = mysqli_query($conexao, $consulta) or die ($mysqli->error);
@@ -57,7 +58,17 @@
 				</tr>				
 			</table>
 			<div>
-				<button> Alterar e-mail </button> <button> Alterar senha </button> <button> Alterar telefone </button>
+				<a class='btn btn-warning' href="<?php echo "altera_email.php?cpf=". $dado['cpf'] 
+												."&email=".$dado['email']
+												?>">Alterar Email</a>
+												
+				<a class='btn btn-warning' href="<?php echo "altera_telefone.php?cpf=". $dado['cpf'] 
+												."&telefone=".$dado['telefone']
+												?>">Alterar Telefone</a>
+												
+				<a class='btn btn-warning' href="<?php echo "altera_senha.php?cpf=". $dado['cpf'] 
+												."&senha=".$dado['senha']
+												?>">Alterar Senha</a>
 			</div>
 		</div>
 	</div>

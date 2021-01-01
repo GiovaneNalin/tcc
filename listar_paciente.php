@@ -19,7 +19,6 @@ if(($resultado_paciente) AND ($resultado_paciente->num_rows != 0)){
 		<td> Email </td> 
 		<td> Data de Nascimento </td> 
 		<td> Sexo </td> 
-		<td> Gestante </td> 
 		<td> CPF do Resposável </td> 
 		<td> Endereço </td> 
 		<td> Nível de permissão </td> 
@@ -34,7 +33,6 @@ if(($resultado_paciente) AND ($resultado_paciente->num_rows != 0)){
 		echo $row_paciente['email'] . "</td><td>";
 		echo $row_paciente['data_nascimento'] . "</td><td>";
 		echo $row_paciente['sexo'] . "</td><td>";
-		echo $row_paciente['gestante'] . "</td><td>";
 		echo $row_paciente['cpf_responsavel'] . "</td><td>";
 		echo $row_paciente['endereco'] . "</td><td>";
 		echo $row_paciente['permissao'] . "</td><td>";

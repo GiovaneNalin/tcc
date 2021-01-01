@@ -16,7 +16,7 @@
 			<h1>Consultar paciente</h1>
 			
 				<form action="<?php echo $_SERVER['PHP_SELF'];?>">
-					<input type='text' class=' form-control' name='parametro' placeholder='Consultar Paciente'/>
+					<input type='text' class=' form-control' name='parametro' placeholder='Consultar Paciente pelo CPF'/>
 					<input class='btn btn-info' type='submit' value='Buscar'/>
 				</form><br /><br />
 				
