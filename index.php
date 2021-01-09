@@ -18,9 +18,6 @@
 		}
 	?>
 	<body class='bg-info'>
-			<!--<div class="row container-fluid">
-				<h1 text-align="left" class='bg-primary'><img src='img/logo.png' width='100px'/>  Sistema de Auxílio à Vacinação</h1>
-			</div>-->
 		<div class='container-fluid'>
 				
 			<div align='center' class='container-fluid'>

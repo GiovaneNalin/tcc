@@ -5,8 +5,8 @@
 		<script src = "jquery-3.4.1.min.js"></script>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="estilo.css"/>
-		<div class='row container-fluid'>
-			<h1 class='bg-primary'><img src='img/logo.png' width='100px'/>  Sistema de Auxílio à Vacinação</h1>
+		<div  width='10px'class='bg-primary  row container-fluid'>
+			<h1><img src='img/logo.png' width='100px'/>  Sistema de Auxílio à Vacinação</h1>
 		</div>
 	
 	

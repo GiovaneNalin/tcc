@@ -8,7 +8,6 @@
 							email,
 							data_nascimento,
 							sexo,
-							gestante,
 							cpf_responsavel,
 							endereco,
 							senha,
@@ -16,6 +15,7 @@
 					FROM paciente WHERE cpf=$cpf";
 		$con = mysqli_query($conexao, $consulta) or die ($mysqli->error);
 		$dado=$con->fetch_array();
+		
 ?>
 	<title> Perfil - Carteirinha de vacinação digital </title>
 	</head>

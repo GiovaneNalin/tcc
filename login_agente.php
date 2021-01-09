@@ -2,17 +2,13 @@
 <html lang ='pt-BR'>
 	<head>
 		<meta charset ='utf-8'/>
-		<!--<script src = "cadastrar_usuario.js"></script>-->
 		<title> Login - Carteirinha de vacinação digital </title>
 		<script src = "jquery-3.4.1.min.js"></script>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
 		<link rel="stylesheet" href="estilo.css"/>
 		<?php include("menu.php"); ?>	
 	</head>
 	<body class='body_agente'>
-			<!--<div class="">
-				<h1 class='logo_agente'><img src='img/logo_agente.png' width='100px'/>  Sistema de Auxílio à Vacinação</h1>
-			</div>-->
 		<div class='container-fluid'>	
 			<div align='center' class='container-fluid'>
 						<!-- LOGIN -->
