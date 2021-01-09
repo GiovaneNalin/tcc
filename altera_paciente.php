@@ -32,7 +32,7 @@
 							<input required='required' class='form-control' value='<?php echo $cpf; ?> maxlength='11' type="number" name="cpf" placeholder="CPF">
 						</label>
 						<label align='left'>CPF responsável 
-							<input required='required' class='form-control' value='<?php echo $cpf_responsavel; ?>' maxlength='11' type="number" name="cpf_responsavel" placeholder="CPF">
+							<input class='form-control' value='<?php echo $cpf_responsavel; ?>' maxlength='11' type="number" name="cpf_responsavel" placeholder="CPF">
 						</label>
 						<label align='left'>Nome
 							<input required='required' class='form-control' value='<?php echo $nome; ?>' type='text' name='nome' placeholder="Nome">
