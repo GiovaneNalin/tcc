@@ -27,7 +27,7 @@
 							<input required='required' class='form-control' maxlength='11' type="number" name="cpf" placeholder="CPF">
 						</label>
 						<label align='left'>CPF responsável 
-							<input required='required' class='form-control' maxlength='11' type="number" name="cpf_responsavel" placeholder="CPF">
+							<input class='form-control' maxlength='11' type="number" name="cpf_responsavel" placeholder="CPF">
 						</label>
 						<label align='left'>Nome
 							<input required='required' class='form-control' type='text' name='nome' placeholder="Nome">
