@@ -1,7 +1,7 @@
 <?php
 
 	//local no qual o banco de dados esta instalado
-	$local = "localhost";
+	$local = "localhost:3306";
 	$usuario = "giovane_nalin";
 	$senha = "giovanenalin";
 	$bd = "carteirinha";
