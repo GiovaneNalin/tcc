@@ -12,7 +12,7 @@
 	$senha = filter_input(INPUT_GET, "senha");
 	$telefone = filter_input(INPUT_GET, "telefone");
 	
-	$link = mysqli_connect("localhost", "root", "", "tcc");
+	$link = mysqli_connect("db4free.net:3306", "giovane_nalin", "giovanenalin", "carteirinha");
 	if($link){
 		echo $cpf;
 

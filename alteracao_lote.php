@@ -7,7 +7,7 @@
 	$data_fabricacao = filter_input(INPUT_GET, "data_fabricacao");
 	$data_validade = filter_input(INPUT_GET, "data_validade");
 	
-	$link = mysqli_connect("localhost", "root", "", "tcc");
+	$link = mysqli_connect("db4free.net:3306", "giovane_nalin", "giovanenalin", "carteirinha");
 	if($link){
 		echo $id;
 
