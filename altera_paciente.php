@@ -19,6 +19,7 @@
 				$permissao = filter_input(INPUT_GET, "permissao");
 				$senha = filter_input(INPUT_GET, "senha");
 				$telefone = filter_input(INPUT_GET, "telefone");
+				$permissao = filter_input(INPUT_GET, "permissao");
 				$cpf_antigo = $cpf;
 		?>	
 	</head>
@@ -28,6 +29,14 @@
 			<h1>Alterar paciente.</h1>
 			<form method = "get" action = "alteracao_paciente.php"><div class='form-group'>
 						<input type='hidden' name='cpf_antigo' value='<?php echo $cpf_antigo; ?>'/>
+						
+						<label for="permissao">Nível de permissão:</label>
+							<select name="permissao" id="permissao">
+							  <option value="1">Agente de Saúde</option>
+							  <option value="2">Administrador</option>
+							  <option value="0">Paciente</option>
+							</select>
+							
 						<label align='left'>CPF
 							<input required='required' class='form-control' value='<?php echo $cpf; ?> maxlength='11' type="number" name="cpf" placeholder="CPF">
 						</label>

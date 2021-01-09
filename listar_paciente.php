@@ -48,7 +48,8 @@ if(($resultado_paciente) AND ($resultado_paciente->num_rows != 0)){
 														"&endereco=".$row_paciente['endereco'].
 														"&permissao=".$row_paciente['permissao'].
 														"&senha=".$row_paciente['senha'].
-														"&telefone=".$row_paciente['telefone']?>">Alterar</a></td>
+														"&telefone=".$row_paciente['telefone'].
+														"&permissao=".$row_paciente['permissao']?>">Alterar</a></td>
 		<td><a class='btn btn-danger'href="<?php echo "remove_paciente.php?cpf=". $row_paciente['cpf']?>">Remover</a></td>
 		
 		<?php echo "</tr></tbody>";
