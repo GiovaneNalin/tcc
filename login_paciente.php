@@ -36,7 +36,7 @@
 							<div>
 								<button id='btn' class='btn btn-info'>LOGIN</button><br/>
 							</div>
-							<a href='esqueceu_senha.php'>Esqueceu a senha?</a><br />
+							<!--<a href='esqueceu_senha.php'>Esqueceu a senha?</a><br />-->
 							<a href='index.php'>Não é paciente? Clique aqui e selecione outra forma de login.</a>
 						</div></form>
 			</div>
