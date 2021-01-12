@@ -24,30 +24,33 @@
 					<h1>Cadastrar um paciente.</h1>
 					<form method = "post" action = "insere_usuario.php"><div class='form-group'>
 						<label align='left'>CPF
-							<input required='required' class='form-control' maxlength='11' type="number" name="cpf" placeholder="CPF">
+							<input required='required' class='form-control' type="number" minlength="11" maxlength='11'  name="cpf" placeholder="CPF">
 						</label>
 						<label align='left'>CPF responsável 
-							<input class='form-control' maxlength='11' type="number" name="cpf_responsavel" placeholder="CPF">
+							<input class='form-control' type="number" minlength="11" maxlength='11' name="cpf_responsavel" placeholder="CPF">
 						</label>
 						<label align='left'>Nome
 							<input required='required' class='form-control' type='text' name='nome' placeholder="Nome">
 						</label><br />
-						<p>*Telefone deve conter o DDD seguido do número. </p>
+						
 						<label align='left'>Telefone
 							<input required='required' class='form-control' type='number' name="telefone" placeholder="(xx) xxxx-xxxx">
 						</label>
 						<label align='left'>E-mail
 							<input required='required' class='form-control' type="email" name="email" placeholder="E-mail">
-						</label><br />
-						<label align='left'>Endereço
-							<input required='required' class='form-control' type="text" name="endereco" placeholder="endereco">
+						</label><br /><p>*Telefone deve conter o DDD seguido do número. </p>
+						<label align='left'>CEP
+							<input required='required' class='form-control' type='number' name="cep" placeholder="CEP">
+						</label>
+						<label align='left'>Número da residência
+							<input required='required' class='form-control' type='number' name="numero" placeholder="Número">
 						</label><br />
 						<label align='left'>Senha
-							<input required='required' class='form-control' maxlength='6' type="password" name="senha" placeholder="Senha">
+							<input required='required' class='form-control' minlength='6' maxlength='6' type="password" name="senha" placeholder="Senha">
 						</label>
-						<label align='left'>Confirmar Senha
+						<!--<label align='left'>Confirmar Senha
 							<input required='required' class='form-control' maxlength='6' type="password" name="confirmar_senha" placeholder="Confirmar Senha">
-						</label><br/>
+						</label>--><br/>
 						<p>*A senha deve conter 6 dígitos. </p>
 						<p>*Pode conter caracteres especiais, letras e números. </p>
 						<label align='left'>Data de nascimento

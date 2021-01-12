@@ -13,12 +13,12 @@
 				$email= filter_input(INPUT_GET, "email");
 				$data_nascimento = filter_input(INPUT_GET, "data_nascimento");
 				$sexo= filter_input(INPUT_GET, "sexo");
-				$gestante = filter_input(INPUT_GET, "gestante");
 				$cpf_responsavel = filter_input(INPUT_GET, "cpf_responsavel");
-				$endereco = filter_input(INPUT_GET, "endereco");
 				$permissao = filter_input(INPUT_GET, "permissao");
 				$senha = filter_input(INPUT_GET, "senha");
 				$telefone = filter_input(INPUT_GET, "telefone");
+				$cep = filter_input(INPUT_GET, "cep");
+				$numero = filter_input(INPUT_GET, "numero");
 				$permissao = filter_input(INPUT_GET, "permissao");
 				$cpf_antigo = $cpf;
 		?>	
@@ -32,13 +32,14 @@
 						
 						<label for="permissao">Nível de permissão:</label>
 							<select name="permissao" id="permissao">
-							  <option value="1">Agente de Saúde</option>
-							  <option value="2">Administrador</option>
-							  <option value="0">Paciente</option>
+								<option value="" disabled selected>:: Permissão </option>
+								<option value="1">Agente de Saúde</option>
+								<option value="2">Administrador</option>
+								<option value="0">Paciente</option>
 							</select>
 							
 						<label align='left'>CPF
-							<input required='required' class='form-control' value='<?php echo $cpf; ?> maxlength='11' type="number" name="cpf" placeholder="CPF">
+							<input required='required' class='form-control' value='<?php echo $cpf; ?>' maxlength="11" type="number" name="cpf" placeholder="CPF">
 						</label>
 						<label align='left'>CPF responsável 
 							<input class='form-control' value='<?php echo $cpf_responsavel; ?>' maxlength='11' type="number" name="cpf_responsavel" placeholder="CPF">
@@ -46,21 +47,20 @@
 						<label align='left'>Nome
 							<input required='required' class='form-control' value='<?php echo $nome; ?>' type='text' name='nome' placeholder="Nome">
 						</label><br />
-						<p>*Telefone deve conter o DDD seguido do número. </p>
 						<label align='left'>Telefone
 							<input required='required' class='form-control' value='<?php echo $telefone; ?>' type='number' name="telefone" placeholder="(xx) xxxx-xxxx">
 						</label>
 						<label align='left'>E-mail
 							<input required='required' class='form-control' value='<?php echo $email; ?>' type="email" name="email" placeholder="E-mail">
-						</label><br />
-						<label align='left'>Endereço
-							<input required='required' class='form-control' value='<?php echo $endereco; ?>' type="text" name="endereco" placeholder="endereco">
+						</label><br /><p>*Telefone deve conter o DDD seguido do número. </p>
+						<label align='left'>CEP
+							<input required='required' class='form-control' value='<?php echo $cep; ?>' type='number' name="cep" placeholder="CEP">
+						</label>
+						<label align='left'>Número da residência
+							<input required='required' class='form-control' value='<?php echo $numero; ?>' type='number' name="numero" placeholder="Número">
 						</label><br />
 						<label align='left'>Senha
-							<input required='required' class='form-control' value='<?php echo $senha; ?>' maxlength='6' type="password" name="senha" placeholder="Senha">
-						</label>
-						<label align='left'>Confirmar Senha
-							<input required='required' class='form-control' value='<?php echo $senha; ?>' maxlength='6' type="password" name="confirmar_senha" placeholder="Confirmar Senha">
+							<input required='required' class='form-control' value='<?php echo $senha; ?>' minlength='6' maxlength='6' type="password" name="senha" placeholder="Senha">
 						</label><br/>
 						<p>*A senha deve conter 6 dígitos. </p>
 						<p>*Pode conter caracteres especiais, letras e números. </p>

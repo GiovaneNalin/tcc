@@ -17,7 +17,8 @@
 	$data_nascimento = $_POST["data_nascimento"];
 	$sexo = $_POST["sexo"];
 	$cpf_responsavel = $_POST["cpf_responsavel"];
-	$endereco = $_POST["endereco"];
+	$cep = $_POST["cep"];
+	$numero = $_POST["numero"];
 	$permissao = 0;
 	$senha = $_POST["senha"];
 	$telefone = $_POST["telefone"];	
@@ -28,11 +29,12 @@
 								'$email',
 								'$data_nascimento',
 								'$sexo',
-								'$cpf_responsavel',
-								'$endereco',
+								'$cpf_responsavel',								
 								'$permissao',
 								'$senha',
-								'$telefone'					
+								'$telefone',			
+								'$cep',
+								'$numero'
 								)";
 				
 	mysqli_error($conexao);

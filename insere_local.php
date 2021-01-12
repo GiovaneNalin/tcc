@@ -12,11 +12,13 @@
 	include("conexao.php");
 	
 	$nome_postinho = $_POST["nome_postinho"];
-	$endereco = $_POST["endereco"];
+	$cep = $_POST["cep"];
+	$numero = $_POST["numero"];
 	
-	$insercao = "INSERT INTO local (nome_postinho, endereco)
+	$insercao = "INSERT INTO local (nome_postinho, cep, numero)
 						VALUES ('$nome_postinho',
-								'$endereco'
+								'$cep',
+								'$numero'
 								)";
 	mysqli_error($conexao);
 	mysqli_query($conexao, $insercao)

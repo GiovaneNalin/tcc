@@ -18,8 +18,11 @@
 				<label align='left'>Nome do Posto de Saúde:
 					<input required='required' class='form-control' type='text' name='nome_postinho' placeholder="Nome">
 				</label><br />
-				<label align='left'>Endereço:<br/>
-					<input required='required' class='form-control' type='text' name="endereco" placeholder='Endereço'>
+				<label align='left'>CEP:<br/>
+					<input required='required' class='form-control' type='number' maxlength='9' name="cep" placeholder='CEP'>
+				</label><br/>
+				<label align='left'>Número:<br/>
+					<input required='required' class='form-control' type='text' name="numero" placeholder='Número'>
 				</label><br/>
 				<button id='btn' class='btn btn-info'>CADASTRAR</button><br/>
 			</div></form>

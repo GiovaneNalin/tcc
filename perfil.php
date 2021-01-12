@@ -9,9 +9,10 @@
 							data_nascimento,
 							sexo,
 							cpf_responsavel,
-							endereco,
 							senha,
-							telefone							 
+							telefone,
+							cep,
+							numero
 					FROM paciente WHERE cpf=$cpf";
 		$con = mysqli_query($conexao, $consulta) or die ($mysqli->error);
 		$dado=$con->fetch_array();
@@ -54,7 +55,7 @@
 						<td> <?php echo $dado["cpf_responsavel"] ?> </td> 
 				</tr>
 				<tr><td><b> Endereço: </b></td> 
-						<td> <?php echo $dado["endereco"] ?> </td>
+						<td> (<b>CEP:</b> <?php echo $dado["cep"] ?> <b>Número</b> <?php echo $dado["numero"] ?>)</td>
 				</tr>				
 			</table>
 			<div>

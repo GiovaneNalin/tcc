@@ -20,7 +20,8 @@ if(($resultado_paciente) AND ($resultado_paciente->num_rows != 0)){
 		<td> Data de Nascimento </td> 
 		<td> Sexo </td> 
 		<td> CPF do Resposável </td> 
-		<td> Endereço </td> 
+		<td> CEP </td> 
+		<td> Número </td> 
 		<td> Nível de permissão </td> 
 		<td> Senha </td> 
 		<td> Telefone </td> 
@@ -34,7 +35,8 @@ if(($resultado_paciente) AND ($resultado_paciente->num_rows != 0)){
 		echo $row_paciente['data_nascimento'] . "</td><td>";
 		echo $row_paciente['sexo'] . "</td><td>";
 		echo $row_paciente['cpf_responsavel'] . "</td><td>";
-		echo $row_paciente['endereco'] . "</td><td>";
+		echo $row_paciente['cep'] . "</td><td>";
+		echo $row_paciente['numero'] . "</td><td>";
 		echo $row_paciente['permissao'] . "</td><td>";
 		echo $row_paciente['senha'] . "</td><td>";
 		echo $row_paciente['telefone'] . "</td>";?>
@@ -42,13 +44,13 @@ if(($resultado_paciente) AND ($resultado_paciente->num_rows != 0)){
 														"&nome=".$row_paciente['nome'].
 														"&email=".$row_paciente['email'].
 														"&data_nascimento=".$row_paciente['data_nascimento'].
-														"&sexo=".$row_paciente['sexo'].
-														"&gestante=".$row_paciente['gestante'].
-														"&cpf_responsavel=".$row_paciente['cpf_responsavel'].
-														"&endereco=".$row_paciente['endereco'].
+														"&sexo=".$row_paciente['sexo'].							
+														"&cpf_responsavel=".$row_paciente['cpf_responsavel'].														
 														"&permissao=".$row_paciente['permissao'].
 														"&senha=".$row_paciente['senha'].
 														"&telefone=".$row_paciente['telefone'].
+														"&cep=".$row_paciente['cep'].
+														"&numero=".$row_paciente['numero'].
 														"&permissao=".$row_paciente['permissao']?>">Alterar</a></td>
 		<td><a class='btn btn-danger'href="<?php echo "remove_paciente.php?cpf=". $row_paciente['cpf']?>">Remover</a></td>
 		
