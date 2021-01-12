@@ -27,8 +27,8 @@ session_start();?>
 				</label><br />
 				
 				<input id='btn' type='submit' value ='Alterar' class='btn btn-danger'>
-				<button href ='perfil.php' id='btn' class='btn btn-info'>Cancelar</button><br/>
-			</div></form>
+				
+			</div></form><a href ='perfil.php'><button id='btn' class='btn btn-info'>Cancelar</button></a><br/>
 		</div>
 		
 	</body>

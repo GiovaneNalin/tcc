@@ -23,9 +23,8 @@ session_start();?>
 					<input required='required' class='form-control' type='number' value='<?php echo $telefone; ?>' name='telefone' placeholder="Novo telefone">
 				</label><br />
 				
-				<input id='btn' type='submit' value ='Alterar' class='btn btn-danger'>
-				<button href ='perfil.php' id='btn' class='btn btn-info'>Cancelar</button><br/>
-			</div></form>
+				<input id='btn' type='submit' value ='Alterar' class='btn btn-danger'>				
+			</div></form><a href ='perfil.php'><button id='btn' class='btn btn-info'>Cancelar</button></a><br/>
 		</div>
 		
 	</body>

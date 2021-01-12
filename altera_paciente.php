@@ -80,8 +80,8 @@
 						</label>
 						</div>											
 						<input id='btn' type='submit' value ='Alterar' class='btn btn-danger'/>
-						<button href ='paciente.php' id='btn' class='btn btn-info'>Cancelar</button><br/>
-					</div></form>
+						
+					</div></form><a  href ='paciente.php'> <button id='btn' class='btn btn-info'>Cancelar</button></a><br/>
 		</div>
 	
 	</body>
