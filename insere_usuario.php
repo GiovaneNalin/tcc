@@ -21,7 +21,7 @@
 	$permissao = 0;
 	$senha = $_POST["senha"];
 	$telefone = $_POST["telefone"];	
-
+	
 	$insercao = "INSERT INTO paciente
 						VALUES ('$cpf',
 								'$nome',
@@ -34,7 +34,7 @@
 								'$senha',
 								'$telefone'					
 								)";
-		
+				
 	mysqli_error($conexao);
 	mysqli_query($conexao, $insercao)
 		or die("0");
